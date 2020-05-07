@@ -96,14 +96,6 @@ sudo apt-get install -y lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6
 sudo apt-get install -y rpm
 sudo apt-get install -y alien dpkg-dev debhelper
 
-# Dictionary Client and Server with Thesaurus
-sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-sudo apt-get install -y dict
-sudo apt-get install -y dictd
-sudo apt-get install -y dict-gcide
-sudo apt-get install -y dict-wn
-sudo apt-get install -y dict-devil
-sudo apt-get install -y dict-moby-thesaurus
 
 # For Android Studio (Gradle Daemon)
 #touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
@@ -111,7 +103,6 @@ sudo apt-get install -y dict-moby-thesaurus
 # Snap installation
 sudo apt update
 sudo apt install snapd
-sudo snap install zoom
 sudo snap install zoom-client
 sudo snap install code --classic
 sudo snap install spt
@@ -119,6 +110,7 @@ sudo snap install spotify
 sudo snap install vlc
 sudo snap install audacity
 sudo snap install slack
+sudo snap install chromium
 
 
 # install Albert
