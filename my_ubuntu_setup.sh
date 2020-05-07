@@ -30,6 +30,12 @@ sudo apt-get install -y python3-pip
 sudo apt-get install -y libkrb5-dev
 sudo apt-get install -y git xclip xsel
 
+# Vim-Plug
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+
 
 # Setup oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -117,6 +123,13 @@ sudo apt-get update
 sudo apt-get install albert
 
 cp ./sourav_zshrc ~/.zshrc
+
+mkdir -p ~/.config/nvim
+touch ~/.config/nvim/init.vim
+echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> ~/.config/nvim/init.vim
+echo "let &packpath = &runtimepath" >> ~/.config/nvim/init.vim
+echo "source ~/.vimrc" >> ~/.config/nvim/init.vim
+
 
 
 
