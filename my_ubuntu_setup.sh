@@ -80,6 +80,9 @@ sudo apt -install acpi-call-dkms tp-smapi-dkms
 sudo tlp start
 sudo tlp stat
 
+# Powertop
+sudo apt install -y powertop
+
 # Sticky Notes
 sudo apt-get install -y xpad
 
