@@ -28,36 +28,38 @@ sudo apt-get install -y vim nvim curl wget git python-software-properties
 sudo apt-get install -y python-dev, python-pip
 sudo apt-get install -y python3-pip
 sudo apt-get install -y libkrb5-dev
+sudo apt-get install -y git xclip xsel
+
 
 # Setup oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Setup plugins for oh-my-zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Setup https://github.com/wting/autojump
-
 sudo apt-get install -y autojump
 
+# Setup tmux
+sudo apt-get install -y tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Nodejs and NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 source ~/.profile
-sudo nvm install 7.10.0
-sudo nvm use 7.10.0
+sudo nvm install 12.3.1
 node -v
 
 #nodemon
-sudo npm install -g nodemon trash-cli empty-trash-cli eslint pm2 forever
+sudo npm install -g nodemon trash-cli empty-trash-cli eslint pm2 forever yarn  react-native-cli
 
+# # Installing JDK and JRE
+# sudo apt-get install -y default-jre
+# sudo apt-get install -y default-jdk
 
-# Git - a version control system
-sudo apt-get update
-sudo apt-get install -y git xclip xsel
-
-
-# Installing JDK and JRE
-sudo apt-get install -y default-jre
-sudo apt-get install -y default-jdk
+# Installing RUST and Cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Gimp Image Editor
 sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
@@ -72,7 +74,9 @@ sudo apt-get install -y filezilla
 sudo apt-get remove laptop-mode-tools
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
-sudo apt-get install -y tlp tlp-rdw smartmontools ethtool
+sudo apt-get install -y tlp tlp-rdw 
+# Thinkpad Only
+sudo apt -install acpi-call-dkms tp-smapi-dkms
 sudo tlp start
 sudo tlp stat
 
@@ -100,6 +104,29 @@ sudo apt-get install -y dict-moby-thesaurus
 
 # For Android Studio (Gradle Daemon)
 #touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+
+# Snap installation
+sudo apt update
+sudo apt install snapd
+sudo snap install zoom
+sudo snap install zoom-client
+sudo snap install code --classic
+sudo snap install spt
+sudo snap install spotify
+sudo snap install vlc
+sudo snap install audacity
+sudo snap install slack
+
+
+# install Albert
+
+sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list"
+wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_18.04/Release.key -O Release.key
+sudo apt-key add - < Release.key
+sudo apt-get update
+sudo apt-get install albert
+
+cp ./sourav_zshrc ~/.zshrc
 
 
 
