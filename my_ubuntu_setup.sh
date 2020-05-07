@@ -61,7 +61,8 @@ export NVM_DIR="$HOME/.nvm"
 
 
 source ~/.profile
-sudo nvm install 12.3.1
+nvm install 12.3.1
+
 node -v
 
 #nodemon
@@ -70,6 +71,7 @@ sudo npm install -g nodemon trash-cli empty-trash-cli eslint pm2 forever yarn  r
 # # Installing JDK and JRE
 # sudo apt-get install -y default-jre
 # sudo apt-get install -y default-jdk
+sudo apt-get install openjdk-8-jre
 
 # Installing RUST and Cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
