@@ -24,7 +24,8 @@ sudo apt-get install -y build-essential libssl-dev
 sudo apt-get install -y zsh 
 
 # Vim, Curl, Python - Some random useful stuff
-sudo apt-get install -y vim nvim curl wget git python-software-properties
+sudo apt-get install -y vim neovim curl wget git software-properties-common
+ 
 sudo apt-get install -y python-dev, python-pip
 sudo apt-get install -y python3-pip
 sudo apt-get install -y libkrb5-dev
@@ -53,6 +54,12 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Nodejs and NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 source ~/.profile
 sudo nvm install 12.3.1
 node -v
@@ -66,12 +73,7 @@ sudo npm install -g nodemon trash-cli empty-trash-cli eslint pm2 forever yarn  r
 
 # Installing RUST and Cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Gimp Image Editor
-sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras # Archive Extractors
-sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
-
-# FileZilla - a FTP client
+# Gimp Image Editor sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras # Archive Extractors sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller # FileZilla - a FTP client
 sudo apt-get install -y filezilla
 
 # TLP - saves battery when Ubuntu is installed on Laptops
@@ -80,9 +82,9 @@ sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install -y tlp tlp-rdw 
 # Thinkpad Only
-sudo apt -install acpi-call-dkms tp-smapi-dkms
+sudo apt install acpi-call-dkms tp-smapi-dkms
 sudo tlp start
-sudo tlp stat
+sudo tlp-stat
 
 # Powertop
 sudo apt install -y powertop
@@ -107,9 +109,8 @@ sudo apt install snapd
 sudo snap install zoom-client
 sudo snap install code --classic
 sudo snap install spt
-sudo snap install spotify
+sudo snap install spotify --classic
 sudo snap install vlc
-sudo snap install audacity
 sudo snap install slack
 sudo snap install chromium
 
@@ -130,6 +131,5 @@ echo "set runtimepath^=~/.vim runtimepath+=~/.vim/after" >> ~/.config/nvim/init.
 echo "let &packpath = &runtimepath" >> ~/.config/nvim/init.vim
 echo "source ~/.vimrc" >> ~/.config/nvim/init.vim
 
-
-
-
+git config --global user.email "souravchatterjee81@gmail.com"
+git config --global user.name "sourav"
