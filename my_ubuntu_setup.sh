@@ -62,9 +62,7 @@ sudo npm install -g nodemon trash-cli empty-trash-cli eslint pm2 forever yarn  r
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Gimp Image Editor
-sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras
-
-# Archive Extractors
+sudo apt-get install -y gimp gimp-data gimp-plugin-registry gimp-data-extras # Archive Extractors
 sudo apt-get install -y unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 
 # FileZilla - a FTP client
@@ -84,7 +82,7 @@ sudo tlp stat
 sudo apt install -y powertop
 
 # Sticky Notes
-sudo apt-get install -y xpad
+sudo apt-get install -y xpad guake
 
 # KVM acceleration and cpu checker
 sudo apt-get install -y cpu-checker
@@ -97,10 +95,7 @@ sudo apt-get install -y rpm
 sudo apt-get install -y alien dpkg-dev debhelper
 
 
-# For Android Studio (Gradle Daemon)
-#touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
-
-# Snap installation
+# For Android Studio (Gradle Daemon) #touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties Snap installation
 sudo apt update
 sudo apt install snapd
 sudo snap install zoom-client
