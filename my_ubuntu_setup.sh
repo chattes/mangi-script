@@ -24,7 +24,7 @@ sudo apt-get install -y build-essential libssl-dev
 sudo apt-get install -y zsh 
 
 # Vim, Curl, Python - Some random useful stuff
-sudo apt-get install -y vim neovim curl wget git software-properties-common
+sudo apt-get install -y vim curl wget git software-properties-common
  
 sudo apt-get install -y python-dev, python-pip
 sudo apt-get install -y python3-pip
@@ -115,6 +115,7 @@ sudo snap install spotify --classic
 sudo snap install vlc
 sudo snap install slack
 sudo snap install chromium
+sudo snap install --edge nvim --classic
 
 
 # install Albert
@@ -135,3 +136,17 @@ echo "source ~/.vimrc" >> ~/.config/nvim/init.vim
 
 git config --global user.email "souravchatterjee81@gmail.com"
 git config --global user.name "sourav"
+
+
+# Setup Calibre
+
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# Install Flameshot
+sudo apt install flameshot
+
+
+
+# All Done -- Reboot
+
+sudo reboot

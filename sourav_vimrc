@@ -19,7 +19,6 @@ filetype off                  " required
 set completeopt=longest,menuone
 call plug#begin('~/.local/share/nvim/plugged')
 " Use release branch
-Plug 'SirVer/ultisnips'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
