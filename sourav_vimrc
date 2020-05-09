@@ -20,6 +20,7 @@ set completeopt=longest,menuone
 call plug#begin('~/.local/share/nvim/plugged')
 " Use release branch
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tomasiser/vim-code-dark'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'airblade/vim-rooter'
@@ -88,7 +89,10 @@ let g:tmux_navigator_no_mappings = 1
 let g:NERDTreeIgnore = ['^node_modules$']
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 set background=dark
-colorscheme adventurous
+set t_Co=256
+set t_ut=
+colorscheme codedark
+let g:airline_theme = 'codedark'
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
