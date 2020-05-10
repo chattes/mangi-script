@@ -112,8 +112,9 @@ sudo snap install zoom-client
 sudo snap install code --classic
 sudo snap install spt
 sudo snap install spotify --classic
+sudo snap install skype --classic
 sudo snap install vlc
-sudo snap install slack
+sudo snap install slack --classic
 sudo snap install chromium
 sudo snap install --edge nvim --classic
 sudo snap install ksuperkey
