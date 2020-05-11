@@ -21,6 +21,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Use release branch
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tomasiser/vim-code-dark'
+Plug 'jremmen/vim-ripgrep'
 Plug 'honza/vim-snippets'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'airblade/vim-rooter'
@@ -93,6 +94,7 @@ set t_Co=256
 set t_ut=
 colorscheme codedark
 let g:airline_theme = 'codedark'
+let g:rg_command = 'rg --vimgrep -S'
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
@@ -177,7 +179,7 @@ let g:fzf_action = {
 
 nnoremap <c-p> :FZF<cr>
 nnoremap <c-p><c-b> :Buffers<cr>
-nnoremap <c-p><c-s> :Ag <C-R><C-W><CR>
+nnoremap <c-p><c-s> :Rg <C-R><C-W><CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 command! -bang -nargs=* Ag
@@ -207,6 +209,7 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
 	\ 'coc-prettier',
 	\ 'coc-json',
+	\ 'coc-html'
 	\ ]
 
 " Remap for do codeAction of current line
