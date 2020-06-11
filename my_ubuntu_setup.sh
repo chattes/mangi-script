@@ -108,16 +108,23 @@ sudo apt-get install -y alien dpkg-dev debhelper
 # For Android Studio (Gradle Daemon) #touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties Snap installation
 sudo apt update
 sudo apt install snapd
-sudo snap install zoom-client
-sudo snap install code --classic
-sudo snap install spt
-sudo snap install spotify --classic
-sudo snap install skype --classic
-sudo snap install vlc
-sudo snap install slack --classic
-sudo snap install chromium
 sudo snap install --edge nvim --classic
 sudo snap install ksuperkey
+
+
+sudo add-apt-repository ppa:alexlarsson/flatpak
+sudo apt update
+sudo apt install flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub skype
+flatpak install flathub spotify -y
+flatpak install flathub zoom -y
+flatpak install flathub peek -y
+flatpak install flathub org.kde.kdenlive -y
+flatpak install flathub org.xonotic.Xonotic -y
+flatpak install flathub com.realm667.WolfenDoom_Blade_of_Agony -y
+
 
 cp ./sourav_zshrc ~/.zshrc
 
