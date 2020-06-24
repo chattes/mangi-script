@@ -30,7 +30,7 @@ Plug 'KabbAmine/zeavim.vim'
 Plug 'mtth/scratch.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'dhruvasagar/vim-zoom'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'jelera/vim-javascript-syntax'
@@ -160,9 +160,6 @@ let g:nerdtree_tabs_open_on_console_startup=0
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 " better key bindings for UltiSnipsExpandTrigger
-let g:ale_sign_error = '.' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 1 " Less distracting when opening a new file
 let g:mkdp_refresh_slow = 1
 "Nerdtree Shortcut mapping
 map <silent> <C-t> :NERDTreeToggle<ENTER>
@@ -177,9 +174,9 @@ let g:fzf_action = {
       \ }
 
 
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-p> :GFiles<cr>
 nnoremap <c-p><c-b> :Buffers<cr>
-nnoremap <c-p><c-s> :Rg <C-R><C-W><CR>
+nnoremap <c-p><c-s> :Ag <C-R><C-W><CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 command! -bang -nargs=* Ag
@@ -189,8 +186,8 @@ command! -bang -nargs=* Ag
   \                 <bang>0)
 
 "Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_check_on_open=1
+" let g:syntastic_always_populate_loc_list = 1
 " Emmet Configuration
 let g:user_emmet_leader_key='<C-E>'
 
@@ -201,7 +198,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 let g:coc_global_extensions = [
 	\ 'coc-snippets',
   \ 'coc-pairs',
@@ -209,7 +206,8 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
 	\ 'coc-prettier',
 	\ 'coc-json',
-	\ 'coc-html'
+	\ 'coc-html',
+  \ 'coc-eslint'
 	\ ]
 
 " Remap for do codeAction of current line
@@ -232,7 +230,7 @@ let g:user_emmet_settings = {
 												\      'extends' : 'jsx',
 												\  },
 												\}
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 " let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['prettier-eslint', 'eslint']}
 " let g:ale_enabled = 1
 " let g:ale_fix_on_save = 1
